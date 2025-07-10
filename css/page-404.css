@@ -1,0 +1,72 @@
+@font-face {
+        font-family: 'persian'; /* یک نام دلخواه برای فونت خود انتخاب کنید */
+        src: url(Font/SHBlabeloo.ttf) format('truetype');
+        }
+        @font-face {
+        font-family: 'upsans';
+        src: url(Font/upsans.woff) format('woff');
+}
+        body{
+            font-family: upsans ,sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            text-align: center;
+            background: hsla(298, 68%, 90%, 1);
+            background: linear-gradient(90deg, hsla(298, 68%, 90%, 1) 0%, hsla(30, 82%, 91%, 1) 100%);
+            background: -moz-linear-gradient(90deg, hsla(298, 68%, 90%, 1) 0%, hsla(30, 82%, 91%, 1) 100%);
+            background: -webkit-linear-gradient(90deg, hsla(298, 68%, 90%, 1) 0%, hsla(30, 82%, 91%, 1) 100%);
+            filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F6D5F7", endColorstr="#FBE9D7", GradientType=1 );
+            position: relative;
+        }
+        .page-404{
+            z-index: 1;
+        }
+        .oops-text{
+            font-family: persian;
+            font-size: 20rem;
+            font-weight: bold;
+            background-image: url(../img/page-404.jpg);
+            background-clip: text;
+            color: transparent;
+            -webkit-background-clip: text;
+            margin: 0;
+        }
+        .page-404 p{
+            font-size: 25px;
+
+        }
+        .page-404>a{
+            display: inline-block;
+            font-size: 20px;
+            text-decoration: none;
+            background-color: #070738;
+            padding: 10px 20px;
+            color: #fff;
+            border: 3px solid #41ff00;
+            border-radius: 30px;
+        }
+        .bak{
+            position: absolute;
+            z-index: 0;
+            font-size: 600px;
+            color: hsl(221.54deg 19.37% 69.73%);
+        }
+        /* RESPONSIVE */
+        @media(max-width:768px){
+            .page-404 p{
+                font-size: 14px;
+            }
+            .oops-text{
+                font-size: 8rem;
+            }
+            .page-404 a{
+                font-size: 10px;
+            }
+            .bak{
+                font-size: 225px;
+                margin-top: 150px;
+            }
+        }

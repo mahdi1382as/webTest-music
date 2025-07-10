@@ -1,0 +1,816 @@
+/* ===================================================================
+   1. تنظیمات کلی (Global & Resets)
+   =================================================================== */
+
+/* تعریف فونت سفارشی */
+@font-face {
+    font-display: swap;
+    font-family: upsans;
+    font-style: normal;
+    font-weight: 400;
+    src: url(Font/upsans.woff) format("woff"), url(https://upmusics.com/wp-content/themes/UPMV2/upsans.woff2) format("woff2");
+}
+
+/* ریست کلی */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+/* استایل‌های پایه بدنه */
+body {
+    direction: rtl;
+    color: #0f1c2c;
+    overflow-x: hidden;
+    cursor: default;
+    font-family: upsans, sans-serif;
+    font-size: 14px;
+    background: #0f1c2c;
+}
+
+/* استایل تگ‌های عمومی */
+h1, h2, h3, h4, h5, h6 {
+    font-family: upsans;
+    font-weight: 400;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}
+
+strong, b {
+    font-weight: 400;
+}
+
+/* کلاس‌های کمکی (Utility) */
+.upw {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 97%;
+}
+
+.upf {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+/* ===================================================================
+   2. هدر اصلی (main-header)
+   =================================================================== */
+body>header{
+    background: url(background/banner-header.png) ;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    background-color: rgba(0, 0, 0, 0.3);
+
+}
+.main-header {
+    padding-top: 20px;
+    background-color: rgba(255, 255, 255, 0.066);
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    position: relative;
+    z-index: 1;
+}
+
+
+/* -- لوگو -- */
+.logo img {
+    height: 100px;
+}
+
+/* -- بخش جستجو و لینک‌های پایینی -- */
+.search-and-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-form {
+    display: flex;
+    width: 700px;
+    border: 2px solid #dbdbdb;
+    border-radius: 0.5em;
+}
+
+.search-form input {
+    width: 100%;
+    height: 55px;
+    padding: 0 18px;
+    border-radius: 0 5px 5px 0;
+    background-color: #0a1321;
+    border-left: none;
+    font-family: inherit;
+    color: #74757a;
+    outline: none;
+}
+
+.search-form button {
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: #0a1321;
+    cursor: pointer;
+    border-radius: 5px 0 0 5px;
+    font-family: inherit;
+    font-size: larger;
+}
+
+.top-links {
+    display: flex;
+    justify-content:space-between;
+    width: 70%;
+}
+
+.top-links span {
+    background: rgb(6 14 27 / .35);
+    color: #fff;
+    padding: .6em 1em;
+    font-size: 12px;
+    border-radius: .5em;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 49%;
+}
+
+.top-links a {
+    width: 100%;
+    font-size: 13px;
+    margin: 0 15px;
+    color: #d1d9e9;
+}
+
+.top-links strong {
+    display: inline-block;
+    color: #ffffff;
+    font-size: small;
+    animation: upap 1s 300ms infinite;
+    transition: all 300ms ease-out;
+}
+@keyframes upap {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-5px); /* کمی به بالا حرکت کند */
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* -- منوی ناوبری اصلی -- */
+.header-bottom {
+    width: 100%;
+    background: #241f424f;
+    border-radius: .5em .5em 0 0;
+    margin: 1.5em 0 0;
+    padding: 0.5em 1em;
+    border-top: 2px solid #dbdbdb;
+    border-radius: 7px 7px 0 0;
+    border-right: 2px solid #dbdbdb;
+    border-left: 2px solid #dbdbdb;
+}
+
+.main-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.main-nav li a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #F5E8C7;
+    text-decoration: none;
+    transition: background-color 0.03s;
+}
+
+.main-nav li a:hover {
+    color: #d1d9e9;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+
+/* ===================================================================
+   3. اسلایدر پست‌های ویژه (slid-post)
+   =================================================================== */
+
+.slid-post {
+    background: #241f42;
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+    border-radius: 0 0 .5em .5em;
+}
+
+.slid-post > span {
+    display: flex;
+    align-items: center;
+    color: #F5E8C7;
+    margin: 0 0 1.5em;
+}
+
+.slid-post ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.slid-post li {
+    width: 11.25%;
+    border: 2px solid #F5E8C7;
+    border-radius: 10px;
+}
+
+.slid-post li a {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+
+.slid-post li img {
+    display: block;
+    width: 100%;
+}
+
+.slid-post li span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 28px;
+    background: rgb(0 0 0 / .7);
+    color: #fff;
+    font-size: 11px;
+    text-align: center;
+    padding: .5em .2em;
+    transition: all 300ms ease-out;
+}
+
+.slid-post li:hover span {
+    height: 100%;
+}
+
+/* ===================================================================
+   4. کانتینر اصلی محتوا (continer-main)
+   =================================================================== */
+
+.continer-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 2em auto 0;
+}
+
+/* -------------------------------------------------------------------
+   4.1: ستون اصلی پست‌ها (main-post)
+   ------------------------------------------------------------------- */
+
+.main-post {
+    width: 45.5%;
+    order: 2;
+}
+/* -------------------------------------------------------------------
+   4.1: ستون قانون (hp1)
+   ------------------------------------------------------------------- */
+
+.hp1 {
+    padding: 1em;
+    margin: 0 0 1em;
+    line-height: 1.6;
+    overflow: hidden;
+    color: #F5E8C7;
+    font-size: 13px;
+    letter-spacing: -.3px;
+    background: #241f42;
+    border: 2px solid #dbdbdb;
+    border-radius: .5em;
+}
+
+.hp1 {
+    text-align: center;
+}
+
+.hp1 h1 {
+    font-size: 18px;
+    color: #F5E8C7;
+}
+
+.hp1 p{
+    color: #fff;
+    font-size: 13px;
+    letter-spacing: -.3px;
+}
+/* -------------------------------------------------------------------
+   4.1: ستون پست ها (post)
+   ------------------------------------------------------------------- */
+
+.post {
+    overflow: hidden;
+    margin: 0 0 1.5em;
+}
+
+.post header {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-right: 55px;
+    margin: 0 0 1em;
+}
+
+.post header i {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    fill: #7c99ac;
+}
+
+.post header i img {
+    width: 50px;
+    height: 50px;
+}
+
+.post header h2 {
+    font-size: 16px;
+}
+
+.post header h2 a {
+    color: #F5E8C7;
+}
+
+.post header ul {
+    display: flex;
+    color: #818FB4;
+    margin-top: .5em;
+    font-size: 13px;
+}
+
+.post header ul li {
+    margin-right: 0.5em;
+}
+
+.post header ul li:first-child {
+    margin: 0;
+}
+
+.post header > span {
+    position: absolute;
+    left: 1.5em;
+    bottom: -2em;
+    background: linear-gradient(90deg, rgb(99 122 138) 0%, rgb(122 153 173) 100%);
+    color: #fff;
+    padding: .4em .8em;
+    border-radius: .5em;
+    font-size: 13px;
+}
+
+.post > div {
+    padding: 1em;
+    line-height: 2;
+    color: #233a56;
+    font-size: 14px;
+    text-align: center;
+    background: #241f42;
+    border: 2px solid #dbdbdb;
+    border-radius: .5em;
+}
+
+.post > div b, .post > div strong ,div p {
+    font-weight: 700;
+    color: #F5E8C7;
+}
+
+.banner {
+    margin: 1em auto 0;
+    border-radius: .7em;
+}
+
+.post footer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #233a56;
+    padding: 1.2em 1em;
+    color: #fff !important;
+    fill: #fff;
+    font-size: 15px;
+    border-radius: 0 0 .5em .5em;
+    margin: -4px 0 0;
+    text-shadow: 0 2px 4px rgb(0 0 0 / .3);
+}
+
+.post footer a img {
+    width: 30px;
+    margin-right: .7em;
+}
+
+/* -------------------------------------------------------------------
+   4.2: سایدبار چپ (navbar-left)
+   ------------------------------------------------------------------- */
+
+.navbar-left {
+    width: 29%;
+    order: 3;
+}
+
+.upcts {
+    align-items: flex-start;
+    margin: 0 0 1em;
+}
+
+
+.upcts a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    background: #241f42;
+    width: 49%;
+    margin: 0 0 .5em;
+    padding: .5em;
+    border: 2px solid #dbdbdb;
+    border-radius: .5em;
+    font-size: 15px;
+    fill: #7c99ac;
+}
+
+.upcts a img {
+    width: 35px;
+    height: 35px;
+}
+
+.upcts a span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upcts a strong {
+    color: #F5E8C7;
+}
+
+.upcts a b {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: rgba(150, 172, 187, 0.815);
+}
+
+/* -- بخش "جدیدترین آهنگ‌ها" در سایدبار چپ -- */
+.navbar-left section {
+    overflow: hidden;
+}
+
+.navbar-left section header {
+    display: flex;
+    position: relative;
+    padding: 0 5em 1em 1em;
+    fill: #143d4c;
+}
+
+.navbar-left section header img {
+    position: absolute;
+    right: 1em;
+    bottom: -2em;
+    width: 45px;
+    height: 45px;
+}
+
+.navbar-left section header h2 {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #F5E8C7;
+}
+
+.navbar-left section ul {
+    line-height: 2;
+    padding: 1.5em 1em 0;
+    background: #241f42;
+    border: 2px solid #dbdbdb;
+    border-radius: .5em;
+}
+
+.navbar-left section li a {
+    display: flex;
+    align-items: center;
+    color: #F5E8C7;
+}
+
+.navbar-left section li a::before {
+    content: "";
+    height: 10px;
+    width: 10px;
+    border-radius: 3px;
+    background: #cfcfcf;
+    margin-left: .7em;
+    transition: all 350ms ease-out;
+}
+
+/* -------------------------------------------------------------------
+   4.3: سایدبار راست (singer-list)
+   ------------------------------------------------------------------- */
+
+.singer-list {
+    width: 23%;
+    background-color: #241f42;
+    color: #F5E8C7;
+    border: 2px solid #dbdbdb;
+    border-radius: 20px;
+    padding: 10px;
+    padding-top: 0;
+    font-size: 17px;
+    margin-bottom: 10px;
+    align-self: flex-start;
+}
+
+/* -- هدر لیست هنرمندان -- */
+.header-singer-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    border-bottom: #1b2a3d solid 1px;
+}
+
+.header-singer-list > div:first-child {
+    padding-right: 10px;
+}
+
+.header-singer-list h2 {
+    color: #F5E8C7;
+    font-size: 18px;
+}
+
+.header-singer-list span {
+    color: #d5d5d5;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-right: .5em;
+}
+
+.div-microphone {
+    margin-right: 20px;
+}
+
+.icon-microphon {
+    display: block;
+    width: 60px;
+}
+
+/* -- جدول هنرمندان -- */
+.tables {
+    font-size: 15px;
+    padding: 5px;
+}
+
+.tables .td {
+    padding-top: 10px;
+    color: #F5E8C7;
+}
+
+.tables tr a {
+    border-right: #777c87 solid 3px;
+    padding-right: 6px;
+    border-radius: 3px;
+}
+/* <!--------------------------------------------------------------------
+----------------------------------------------------------------------
+                    فـــــــــــــــــوتــــــــــــــر سایـــــــــــت 
+-------------------------------------------------------------------> */
+body>footer{
+    background: url(background/footer.png);
+    background-size: cover;
+    background-position: center;
+    border-top: 3px solid #F5E8C7;
+    border-radius: 35px 35px 0 0;
+    overflow: hidden;
+
+}
+
+.main-footer {
+    background-color: rgba(255, 255, 255, 0.066);
+    backdrop-filter: blur(5px);
+    color: #F5E8C7;
+    padding: 80px 60px 0 60px;
+    
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px; 
+    width: 79%;
+    margin-left: auto;
+    margin-right: auto
+}
+.footer-menu h4 {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.footer-menu ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.footer-menu ul li {
+    margin-bottom: 15px;
+}
+
+.footer-menu ul li a {
+    color: white; 
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.footer-menu ul li a:hover {
+    padding-right: 5px;
+}
+
+.footer-menu ul li a::before {
+    content: '>'; 
+    margin-left: 8px;
+    font-weight: bold;
+}
+
+.logo-footer img {
+    width: 150px; 
+}
+.hr{
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.list-footer{
+    display: flex;
+    justify-content: space-around;
+    padding: 0 10%;
+}
+.list-footer ul{
+    display: flex;
+    justify-content: left;
+    flex-direction: row-reverse ;
+    width: 78%;
+    font-size: 11px;
+}
+.list-footer li a{
+    display: inline-block;
+    padding: 10px 20px;
+}
+.icon-social{
+    margin-top: 5px;
+}
+.icon-social a{
+    margin: 0 8px;
+}
+.icon-social img{
+    width: 20px;
+    vertical-align: middle;
+}
+.footer-bottom{
+    padding: 20px;
+    width: 80%;
+    border-top: 10px solid #fff;
+    border-radius: 35px 35px 0 0;
+    padding-bottom: 110px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #000;
+    display: flex;
+    justify-content: left;
+}
+.post>div, .navbar-left section ul, .hp1, .upfix, .upykta, .other-artis, .coment, .upsngm {
+    background: #241f42;
+    border: 2px solid #fff;
+    border-radius: .5em;
+}
+/* ===================================================================
+   کد رسپانسیو نهایی (با فوتر افقی)
+   =================================================================== */
+
+/* ------------------- تبلت (حداکثر عرض 1024 پیکسل) ------------------- */
+@media (max-width: 1024px) {
+
+    
+
+    /* --- هدر --- */
+    .main-header .upf { flex-direction: column; gap: 15px; }
+    .search-form input{font-size: smaller;}
+    .top-links {  flex-direction: column; gap: 10px; }
+    .top-links span {width: 100%;  }
+    .main-nav ul { justify-content: right;}
+    .navbar-left section {margin-bottom: 40px;}
+
+    /* --- اسلایدر --- */
+    .slid-post li { width: 31%; margin-bottom: 15px; } /* نمایش ۳ تایی */
+    .slid-post ul{ gap: 5px;}
+    .upcts a strong {font-size: small;}
+
+    /* --- فوتر --- */
+    .main-footer .head { justify-content: center; flex-wrap: wrap; gap: 40px; }
+    .footer-menu { text-align: center; }
+    .list-footer ul { justify-content: left;  }
+    .list-footer {padding: 0; width: 100%; }
+    .list-footer li a {padding: 10px 10px;}
+    .icon-social{ margin-right: 0;}
+    .hr{width: 95%;}
+}
+
+/* ------------------- موبایل (حداکثر عرض 768 پیکسل) ------------------- */
+@media (max-width: 768px) {
+    
+        .main-post { width: 100%; order: 1; }
+        .singer-list { width: 100%; order: 2; margin-top: 20px; box-shadow: none; }
+        .navbar-left { width: 100%; order: 3; margin-top: 20px; }
+        .top-links { flex-direction: column; gap: 10px; width: 100%;}
+
+    .main-nav ul {
+        justify-content: center;
+    }
+
+    .search-form { width: 350px; }
+    /* --- اسلایدر --- */
+    .slid-post li {
+        width: 48%; /* نمایش ۲ تایی */
+    }
+    .slid-post ul{ gap: 5px; flex-wrap: wrap;}
+    
+    /* --- فوتر --- */
+    .main-footer {
+        padding: 40px 20px 0 20px; /* کاهش پدینگ داخلی فوتر */
+    }
+    
+    .head{
+        width: 100%;
+        margin: 0;
+    }
+
+    .main-footer .head {
+        gap: 25px; /* کاهش فاصله بین منوهای فوتر */
+        justify-content: space-around;
+        width: 335px;
+    }
+    .list-footer {
+        display: block;
+        width: 100%;
+        text-align: -webkit-center;
+    }
+
+    .list-footer ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    
+    .list-footer li a{
+        padding: 5px 10px; /* کاهش پدینگ لینک‌ها */
+        font-size: 10px; /* کاهش اندازه فونت */
+    }
+
+    .icon-social {
+        margin-bottom: 20px; /* فاصله از لینک‌های پایینی */
+    }
+
+    /* این بخش را مخفی کن */
+    .footer-bottom {
+        display: none;
+    }
+}
